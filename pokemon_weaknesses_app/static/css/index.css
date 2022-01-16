@@ -1,0 +1,87 @@
+/* Custom.scss
+Option A: Include all of Bootstrap
+
+Include any default variable overrides here (though functions won't be available) */
+
+@import "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css";
+
+.btn{
+    color: white;
+    margin: 2px;
+}
+
+.btn-none{
+    background-color: #000000;
+}
+
+.btn-normal{
+    background-color: #a8a878;
+}
+
+.btn-fighting{
+    background-color: #c03028;
+}
+
+.btn-flying{
+    background-color: #a890f0;
+}
+
+.btn-poison{
+    background-color: #a040a0;
+}
+
+.btn-ground{
+    background-color: #e0c068;
+}
+
+.btn-rock{
+    background-color: #b8a038;
+}
+
+.btn-bug{
+    background-color: #a8b820;
+}
+
+.btn-ghost{
+    background-color: #705898;
+}
+
+.btn-steel{
+    background-color: #b8b8d0;
+}
+
+.btn-fire{
+    background-color: #f08030;
+}
+
+.btn-water{
+    background-color: #6890f0;
+}
+
+.btn-grass{
+    background-color: #78c850;
+}
+
+.btn-electric{
+    background-color: #f8d030;
+}
+
+.btn-psychic{
+    background-color: #f85888;
+}
+
+.btn-ice{
+    background-color: #98d8d8;
+}
+
+.btn-dragon{
+    background-color: #7038f8;
+}
+
+.btn-dark-type{
+    background-color: #705848;
+}
+
+.btn-fairy{
+    background-color: #ee99ac;
+}
