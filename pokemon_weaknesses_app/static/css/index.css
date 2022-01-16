@@ -10,12 +10,18 @@ Include any default variable overrides here (though functions won't be available
     margin: 2px;
 }
 
+.col{
+    border: 5px solid rgb(60, 94, 105);
+    border-radius: 10px;
+    background-color: lightslategray;
+}
+
 /* .btn :active,
 .btn :focus{
     border: 10px solid green !important;
 } */
 
-.btn-large{
+.btn-xlarge{
     font-size: 30px;
 }
 
