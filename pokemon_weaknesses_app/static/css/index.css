@@ -10,78 +10,99 @@ Include any default variable overrides here (though functions won't be available
     margin: 2px;
 }
 
-.btn-none{
+/* .btn :active,
+.btn :focus{
+    border: 10px solid green !important;
+} */
+
+.btn-large{
+    font-size: 30px;
+}
+
+.btn-green-brd{
+    border: 5px solid greenyellow
+}
+
+.btn-red-brd{
+    border: 5px solid red
+}
+
+.no-click{
+    pointer-events: none !important;
+}
+
+.btn-None{
     background-color: #000000;
 }
 
-.btn-normal{
+.btn-Normal{
     background-color: #a8a878;
 }
 
-.btn-fighting{
+.btn-Fighting{
     background-color: #c03028;
 }
 
-.btn-flying{
+.btn-Flying{
     background-color: #a890f0;
 }
 
-.btn-poison{
+.btn-Poison{
     background-color: #a040a0;
 }
 
-.btn-ground{
+.btn-Ground{
     background-color: #e0c068;
 }
 
-.btn-rock{
+.btn-Rock{
     background-color: #b8a038;
 }
 
-.btn-bug{
+.btn-Bug{
     background-color: #a8b820;
 }
 
-.btn-ghost{
+.btn-Ghost{
     background-color: #705898;
 }
 
-.btn-steel{
+.btn-Steel{
     background-color: #b8b8d0;
 }
 
-.btn-fire{
+.btn-Fire{
     background-color: #f08030;
 }
 
-.btn-water{
+.btn-Water{
     background-color: #6890f0;
 }
 
-.btn-grass{
+.btn-Grass{
     background-color: #78c850;
 }
 
-.btn-electric{
+.btn-Electric{
     background-color: #f8d030;
 }
 
-.btn-psychic{
+.btn-Psychic{
     background-color: #f85888;
 }
 
-.btn-ice{
+.btn-Ice{
     background-color: #98d8d8;
 }
 
-.btn-dragon{
+.btn-Dragon{
     background-color: #7038f8;
 }
 
-.btn-dark-type{
+.btn-Dark{
     background-color: #705848;
 }
 
-.btn-fairy{
+.btn-Fairy{
     background-color: #ee99ac;
 }

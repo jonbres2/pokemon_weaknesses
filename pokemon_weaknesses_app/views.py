@@ -176,8 +176,7 @@ def superEffectiveCalculator(request):
     mergedSuperEffective = filteredSuperEffecive
     mergedNotEffective = filteredNotEffective
 
-    # Next few sections are checking both lists for primary and secondary type
-    # for any types listed 2x, and then generating and saving a new list into session:
+    # Checking both lists for primary and secondary type for any types listed 2x for SE and NE
     if primaryType != secondaryType:
         doubleEffective = [x for x in primarySuperEffective and secondarySuperEffective if x in primarySuperEffective and x in secondarySuperEffective]
         request.session['doubleEffective'] = doubleEffective
