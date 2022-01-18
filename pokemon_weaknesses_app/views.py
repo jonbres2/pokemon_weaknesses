@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.contrib import messages
 
 def index(request):
     return render(request, "index.html")
@@ -22,15 +23,29 @@ def mergeLists(list1, list2):
     mergedList = list1 + inOnlyList2
     return mergedList
 
+def clearSession(request):
+    try:
+        del request.session['primaryType']
+        del request.session['secondaryType']
+        del request.session['mergedSuperEffective']
+        del request.session['mergedNotEffective']
+        del request.session['mergedImmune']
+    except KeyError:
+        pass
+    return render(request, "index.html")
+
 def superEffectiveCalculator(request):
-    primaryType = request.session['primaryType']
-    secondaryType = request.session['secondaryType']
+    primaryType = request.session.get('primaryType')
+    secondaryType = request.session.get('secondaryType')
 
     # Generating list of effective, not-effective, and immune types for PRIMARY type selected
     primarySuperEffective = []
     primaryNotEffective = []
     primaryImmune = []
-    if primaryType == "Normal":
+    
+    if primaryType == None:
+        messages.warning(request, 'Please select a Primary type, at minimum') 
+    elif primaryType == "Normal":
         primarySuperEffective.extend(["Fighting"])
         primaryNotEffective.extend(["Rock", "Steel"])
         primaryImmune.extend(["Ghost"])
@@ -96,7 +111,9 @@ def superEffectiveCalculator(request):
     secondarySuperEffective = []
     secondaryNotEffective = []
     secondaryImmune = []
-    if secondaryType == "Normal":
+    if secondaryType == None:
+        secondaryType == "None"
+    elif secondaryType == "Normal":
         secondarySuperEffective.extend(["Fighting"])
         secondaryNotEffective.extend(["Rock", "Steel"])
         secondaryImmune.extend(["Ghost"])

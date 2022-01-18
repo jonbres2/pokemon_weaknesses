@@ -22,5 +22,6 @@ urlpatterns = [
     path('', views.index),
     path('primaryType', views.primaryType),
     path('secondaryType', views.secondaryType),
-    path('superEffectiveCalculator', views.superEffectiveCalculator)
+    path('superEffectiveCalculator', views.superEffectiveCalculator),
+    path('clear', views.clearSession),
 ]

@@ -16,6 +16,7 @@
     <div>
         <div class='container p-4'>
             <div class="row">
+                <!-- Selecting Opponent Type(s) Column -->
                 <div class="mx-2 my-4 py-4 col">
                     <h1>Select Opponent's Primary Type:</h1>
                     <center>
@@ -47,7 +48,7 @@
                     <center>
                         <form action="/secondaryType" method="post">
                             {% csrf_token %}
-                            <input type='submit' class='btn btn-None' name="secondaryType" value="None">
+
                             <input type='submit' class='btn btn-Normal' name="secondaryType" value="Normal">
                             <input type='submit' class='btn btn-Fighting' name="secondaryType" value="Fighting">
                             <input type='submit' class='btn btn-Flying' name="secondaryType" value="Flying">
@@ -70,7 +71,8 @@
                     </center>
                 </div>
                 <br><br>
-
+                
+                <!-- Opponent Type Column -->
                 <div class="mx-2 my-4 py-4 col">
                     <h2>Primary Type Selected:</h2>
                     <center>
@@ -82,7 +84,7 @@
                     <br>
                     <h2>Secondary Type Selected:</h2>
                     <center>
-                        {% if request.session.primaryType %}
+                        {% if request.session.secondaryType %}
                         <button
                             class="btn btn-{{request.session.secondaryType}} btn-xlarge no-click">{{request.session.secondaryType}}</button>
                         {% endif %}
@@ -90,6 +92,7 @@
                 </div>
                 <br><br>
 
+                <!-- Opponent Super/Not Effective Column -->
                 <div class="mx-2 my-4 py-4 col">
                     <h2>Super effective types</h2>
                     <center>
@@ -131,13 +134,27 @@
                 <br>
             </div>
 
+            <!-- Run/Clear buttons -->
             <div class="row">
                 <div class="col">
                     <center>
                         <a href="/superEffectiveCalculator" class="btn btn-lg btn-primary">Run</a>
+                        <a href="/clear" class="btn btn-lg btn-danger">Clear</a>
                     </center>
                 </div>
             </div>
+            {% if messages %}
+                <br>
+                <div class="row">
+                    <div class="col pt-3">
+                        <center>
+                        {% for message in messages %}
+                            <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
+                        {% endfor %}
+                        </center>
+                    </div>
+                </div>
+            {% endif %}
         </div>
     </div>
 </body>
